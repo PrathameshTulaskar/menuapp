@@ -7,6 +7,6 @@ FirebaseService firebase=FirebaseService();
 
   Appstate(){
     print("App State Initialized");
-    firebase.getFoodCategory();
+    firebase.getFoodCategory("morjimPride");
   }
 }

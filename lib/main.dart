@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:menuapp/screens/testScreen.dart';
 import 'package:provider/provider.dart';
-
+import 'package:firebase_core/firebase_core.dart';
 import 'package:menuapp/data/outlets.dart';
 import 'package:menuapp/screens/cart_screen.dart';
 import 'package:menuapp/screens/menu_screen.dart';

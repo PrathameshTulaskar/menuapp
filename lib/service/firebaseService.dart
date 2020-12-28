@@ -5,10 +5,10 @@ class FirebaseService
 {
 
   FirebaseFirestore firebasee= FirebaseFirestore.instance;
-  Future<FoodCategory> getFoodCategory()async{
-    var response = await firebasee.collection("foodCategory/morjimPride/category").get();
-   
+  Future<FoodCategory> getFoodCategory(String restaurantName)async{
+    var response = await firebasee.collection("foodCategory/$restaurantName/Category").get();
+    response.docs.forEach((element) {print(element.id);});
     // var output=FoodCategory.fromJson(response);
-    print(response.docs + "Database Data Here");
+    print("Database Data Here");
   }
 }

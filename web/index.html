@@ -38,8 +38,25 @@
       window.addEventListener('flutter-first-frame', function () {
         navigator.serviceWorker.register('flutter_service_worker.js');
       });
-    }
-  </script>
+    }</script>
+    <script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-app.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-firestore.js"></script>
+<script>
+
+  var firebaseConfig = {
+    apiKey: "AIzaSyA6PeHfzHDLCsw_tN68t-dQ6zYjNeUd9vg",
+    authDomain: "menuapp-d78c0.firebaseapp.com",
+    projectId: "menuapp-d78c0",
+    storageBucket: "menuapp-d78c0.appspot.com",
+    messagingSenderId: "783368773649",
+    appId: "1:783368773649:web:116c82b07636c0fc3011b0",
+    measurementId: "G-MWZTNNHXGS"
+  };
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
   <script src="main.dart.js" type="application/javascript"></script>
 </body>
 </html>
