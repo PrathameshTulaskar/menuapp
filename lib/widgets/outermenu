@@ -1,26 +1,4 @@
-import 'dart:ui';
-
-import 'package:flutter/material.dart';
-import 'package:menuapp/Provider/appstate.dart';
-import 'package:menuapp/data/ss_menu.dart';
-import 'package:menuapp/models/menu_item.dart';
-import 'package:menuapp/models/outlet.dart';
-import 'package:provider/provider.dart';
-import 'package:menuapp/data/outlets.dart';
-import 'package:menuapp/models/app_state.dart';
-import 'package:menuapp/widgets/menu_section.dart';
-
-/// A container for multiple [MenuSection]s.
-///
-/// The parent widget to hold full menu for an outlet.
-class Menu extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    var appState = Provider.of<Appstate>(context);
-    var selectedOutlet = 0;
-    // var selectedOutlet = appState.selectedOutlet;
-    // var menuSections = dOutlets[selectedOutlet].menu;
-    return SingleChildScrollView(
+SingleChildScrollView(
 
      
         child: Container(

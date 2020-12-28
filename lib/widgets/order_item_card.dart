@@ -22,7 +22,7 @@ class OrderItemCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var appState = Provider.of<AppState>(context);
+    // var appState = Provider.of<AppState>(context);
 
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 10.0),
@@ -82,7 +82,7 @@ class OrderItemCard extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(13.0),
                   ),
-                  onPressed: () => appState.removeItemFromCart(this.item),
+                  // onPressed: () => appState.removeItemFromCart(this.item),
                 ),
               ),
             ],

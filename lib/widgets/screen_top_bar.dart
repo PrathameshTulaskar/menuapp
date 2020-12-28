@@ -10,7 +10,7 @@ import 'package:menuapp/screens/cart_screen.dart';
 class ScreenTopBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var appState = Provider.of<AppState>(context);
+    // var appState = Provider.of<AppState>(context);
 
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -37,8 +37,8 @@ class ScreenTopBar extends StatelessWidget {
         GestureDetector(
           onTap: () {
             final String currentRoute = ModalRoute.of(context).settings.name;
-            if (currentRoute != CartScreen.id)
-              Navigator.pushNamed(context, CartScreen.id);
+            // if (currentRoute != CartScreen.id)
+              // Navigator.pushNamed(context, CartScreen.id);
           },
           child: Badge(
             animationType: BadgeAnimationType.scale,

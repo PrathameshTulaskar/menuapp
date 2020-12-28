@@ -10,13 +10,13 @@ class OutletTabButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var appState = Provider.of<AppState>(context);
+    // var appState = Provider.of<AppState>(context);
     bool isActive = true;
     // bool isActive = appState.selectedOutlet == this.id;
 
     return GestureDetector(
       onTap: () {
-        appState.setOutlet(this.id);
+        // appState.setOutlet(this.id);
       },
       child: Column(
         children: <Widget>[
