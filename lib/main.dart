@@ -8,8 +8,9 @@ import 'package:menuapp/screens/menu_screen.dart';
 import 'package:menuapp/models/app_state.dart';
 
 import 'Provider/appstate.dart';
+import 'screens/innermenu.dart';
 
-void main() async{ 
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(SSMenuApp());
 }
@@ -20,8 +21,6 @@ class SSMenuApp extends StatefulWidget {
 }
 
 class _SSMenuAppState extends State<SSMenuApp> {
-  
-
   // @override
   // void initState() {
   //   super.initState();
@@ -33,23 +32,61 @@ class _SSMenuAppState extends State<SSMenuApp> {
   Widget build(BuildContext context) {
     return MultiProvider(
       // ignore: deprecated_member_use
-     providers:[
-          ChangeNotifierProvider.value(
-            value: Appstate(),
-          ),
-
-
-     ],
+      providers: [
+        ChangeNotifierProvider.value(
+          value: Appstate(),
+        ),
+      ],
       // create: (BuildContext context) {  },
       child: MaterialApp(
-        theme: ThemeData(fontFamily: 'Poppins'),
         routes: {
-          MenuScreen.id: (context) => MenuScreen(),
-          // CartScreen.id: (context) => CartScreen(),
+          // When navigating to the "/" route, build the FirstScreen widget.
+          '/dishesPage': (context) => DishesPage(),
+          '/Menu': (context) => MenuScreen(
+                id: "routing",
+              ),
+          // When navigating to the "/second" route, build the SecondScreen widget.
         },
+        onGenerateRoute: (settings) {
+          // Handle '/'
+          if (settings.name == '/') {
+            return MaterialPageRoute(
+                builder: (context) => MenuScreen(
+                      id: "Hello",
+                    ));
+          }
+
+          // Handle '/details/:id'
+          var uri = Uri.parse(settings.name);
+          if (uri.pathSegments.length == 2 &&
+              uri.pathSegments.first == 'details') {
+            var id = uri.pathSegments[1];
+
+            return MaterialPageRoute(
+              builder: (context) => MenuScreen(
+                id: id,
+              ),
+            );
+          }
+
+          return MaterialPageRoute(builder: (context) => UnknownScreen());
+        },
+        theme: ThemeData(fontFamily: 'Poppins'),
+
         // initialRoute: TestScreen(),
-        home: MenuScreen(),
+        home: MenuScreen(
+          id: "Restaurant Name",
+        ),
       ),
     );
+  }
+}
+
+class UnknownScreen extends StatelessWidget {
+  const UnknownScreen({Key key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(child: Text("hello"));
   }
 }

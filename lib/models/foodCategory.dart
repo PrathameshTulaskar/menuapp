@@ -7,8 +7,7 @@ class FoodCategory {
     this.categoryTitle
   });
 FoodCategory.fromJson(Map<String, String> json){
-  var response=json['Drinks'] as Map<String, String>;
-  this.categoryImg=response['categoryImg'];
-  this.categoryTitle=response['categoryTitle'];
+  this.categoryImg=json['categoryImg'];
+  this.categoryTitle=json['categoryTitle'];
 }
 }
